@@ -178,7 +178,7 @@ RUN chmod a+x /usr/local/bin/repo
 ################################
 RUN cd /root/ && \
         mkdir delta && \
-        git clone --depth=1 https://github.com/omnirom/android_packages_apps_OpenDelta.git OpenDelta && \
+        git clone --depth=1 https://github.com/lineageos4microg/android_packages_apps_OpenDelta.git OpenDelta && \
         gcc -o delta/zipadjust OpenDelta/jni/zipadjust.c OpenDelta/jni/zipadjust_run.c -lz && \
         cp OpenDelta/server/minsignapk.jar OpenDelta/server/opendelta.sh delta/ && \
         chmod +x delta/opendelta.sh && \
