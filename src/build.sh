@@ -129,6 +129,7 @@ for branch in ${BRANCH_NAME//,/ }; do
         echo ">> [$(date)] Can't find a matching branch on github.com/TheMuppets, using $themuppets_branch"
       fi
       wget -q -O .repo/local_manifests/proprietary.xml "https://raw.githubusercontent.com/TheMuppets/manifests/$themuppets_branch/muppets.xml"
+      grep -ri xiaomi .repo/local_manifests/proprietary.xml
       /root/build_manifest.py --remote "https://gitlab.com" --remotename "gitlab_https" \
         "https://gitlab.com/the-muppets/manifest/raw/$themuppets_branch/muppets.xml" .repo/local_manifests/proprietary_gitlab.xml
     fi
